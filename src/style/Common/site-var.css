@@ -1,0 +1,35 @@
+.site-var-nav {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.322);
+  z-index: 99999;
+  position: fixed;
+}
+.inner-var {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 320px;
+  background-color: white;
+}
+.side-nav {
+  max-height: 100vh; /* or a specific height like 500px */
+  overflow-y: auto;
+  width: 100%;
+}
+
+.side-nav li {
+  border-bottom: 1px solid #b8b8b8;
+  width: 100%;
+}
+
+.side-nav .nav-link {
+  display: block;
+  width: 100%;
+  padding: 10px 16px;
+  text-decoration: none;
+}

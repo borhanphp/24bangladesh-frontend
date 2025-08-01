@@ -1,0 +1,9 @@
+.opinion img {
+  border-radius: 50%;
+}
+.opinion h5 {
+  font-size: 16px;
+}
+.opinion p {
+  color: #adadad;
+}

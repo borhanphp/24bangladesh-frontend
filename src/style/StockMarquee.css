@@ -1,0 +1,43 @@
+.stock-marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  background: #002b36; /* slightly dark background for better contrast */
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.stock-marquee-track {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 690s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.stock-item {
+  display: inline-block;
+  text-align: center;
+  min-width: 150px;
+}
+
+.stock-item.up {
+  color: #4caf50;
+}
+
+.stock-item.down {
+  color: #f44336;
+}
+
+.arrow {
+  font-size: 16px;
+  vertical-align: middle;
+}

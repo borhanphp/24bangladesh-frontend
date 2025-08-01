@@ -1,0 +1,27 @@
+.home-top-nav li a {
+  background-color: #eeecec;
+  font-size: 13px;
+  padding-left: 10px;
+}
+.home-top-nav li:first-child a {
+  background-color: var(--brand-color);
+  font-size: 13px;
+  color: white;
+}
+.home-top-nav-wrapper {
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+}
+
+.home-top-nav {
+  flex-wrap: nowrap;
+}
+.logo-img-bg {
+  background-color: var(--brand-color);
+  height: 125px;
+  position: absolute;
+  top: 0;
+  width: 120px;
+  text-align: center;
+}

@@ -1,0 +1,36 @@
+.latest-title {
+  color: var(--brand-color);
+  font-weight: 800;
+  border-bottom: 1px solid #000;
+}
+.share-count p {
+  font-weight: 200;
+  font-size: 22px;
+  line-height: 15px;
+  text-align: center;
+}
+.share-count p span {
+  font-size: 16px;
+}
+.latest-card h3 {
+  font-size: 20px;
+}
+.latest-card p {
+  font-size: 16px;
+  color: #696969;
+}
+.category-title h3 {
+  color: var(--brand-color);
+  font-weight: 800;
+  font-size: 20px !important;
+}
+.category-title {
+  border-bottom: 1px solid #000;
+}
+.topic-discription {
+  color: #696969;
+  font-size: 16px;
+}
+.tranding {
+  font-size: 13px;
+}

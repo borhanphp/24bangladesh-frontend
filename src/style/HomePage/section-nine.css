@@ -1,0 +1,25 @@
+.section-nine {
+  background-color: rgb(70, 70, 70);
+}
+.section-nine h2 {
+  background-color: var(--brand-color);
+  color: white;
+  font-size: 20px;
+  padding: 10px 30px;
+  text-align: center;
+}
+.video-lead {
+  background-color: #e3d5ca;
+}
+.video-lead h1 {
+  font-size: 29px;
+}
+.video-lead p {
+  font-size: 15px;
+}
+.video-child {
+  background-color: #e3d5ca;
+}
+.video-child h1 {
+  font-size: 20px;
+}

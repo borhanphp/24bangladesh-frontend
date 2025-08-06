@@ -1,0 +1,27 @@
+.singleShare {
+  border: none;
+  padding: 10px 20px;
+  background-color: #075e54;
+  border-radius: 5px;
+  color: #fff;
+}
+.video-share {
+  border: none;
+  font-size: 18px;
+}
+.color-youtube {
+  color: #ff0000 !important;
+}
+.color-fcebook {
+  color: #1877f2;
+}
+.color-instragram {
+  color: #8a1b1b;
+}
+.video-more-btn {
+  text-decoration: underline !important;
+}
+.more-video-text {
+  font-size: 18px;
+  font-weight: 800;
+}

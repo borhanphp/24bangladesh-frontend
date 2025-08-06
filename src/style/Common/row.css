@@ -1,0 +1,12 @@
+.horizontal-right {
+  border-right: 1px solid #b8b8b8;
+  padding: 0 10px;
+}
+.vertical-bottom {
+  border-bottom: 1px solid #b8b8b8;
+}
+@media only screen and (max-width: 1200px) {
+  .horizontal-right {
+    border: none;
+  }
+}

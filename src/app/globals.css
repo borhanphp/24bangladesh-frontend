@@ -1,0 +1,32 @@
+@import url(../style/style.css);
+@import url("https://fonts.maateen.me/solaiman-lipi/font.css");
+@import url(../style/search.css);
+
+body {
+  font-family: "SolaimanLipi", sans-serif !important;
+  background-color: #124b650e !important;
+}
+.pointer {
+  cursor: pointer;
+}
+a {
+  text-decoration: none !important;
+}
+
+.img-zoom-container {
+  overflow: hidden;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+  position: relative;
+}
+
+.img-zoom-container img {
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.img-zoom-container:hover img {
+  transform: scale(1.1);
+}

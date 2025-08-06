@@ -1,0 +1,6 @@
+.icon {
+  background-color: var(--brand-color);
+  padding: 10px;
+  border-radius: 50%;
+  color: white;
+}

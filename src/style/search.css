@@ -1,0 +1,109 @@
+/* Search Modal Styles */
+.search-modal-backdrop {
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.search-modal {
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.search-input {
+  border: 2px solid #e9ecef;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #6c757d;
+  box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.25);
+}
+
+.search-result-item {
+  transition: background-color 0.2s ease;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.search-result-item:hover {
+  background-color: #f8f9fa;
+  transform: translateX(5px);
+}
+
+.search-result-image {
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.search-loading {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Keyboard shortcut hint */
+.search-shortcut-hint {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background-color: #6c757d;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 10px;
+  opacity: 0.7;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .search-modal {
+    width: 95% !important;
+    max-width: none !important;
+  }
+  
+  .search-result-item {
+    flex-direction: column;
+  }
+  
+  .search-result-image {
+    width: 100% !important;
+    height: 120px !important;
+    margin-bottom: 10px;
+  }
+}
+
+/* Search page card hover effects */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Search header styles */
+.search-header {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+/* Search input focus styles */
+.search-input:focus {
+  border-color: #6c757d;
+  box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.25);
+} 

@@ -3,12 +3,12 @@ import Link from "next/link";
 
 import leadImage from "../../../public/image/leadnews.jpg";
 import { useQuery } from "@tanstack/react-query";
-import { useVideoNews } from "@/api/news";
+import { getVideoNews } from "@/api/news";
 import { IMAGE_URL } from "@/api/config";
 function SectionNine() {
   const { data, isLoading, error } = useQuery({
     queryKey: ["video-news"],
-    queryFn: useVideoNews,
+    queryFn: getVideoNews,
   });
 
   const Video = data?.news?.[0];

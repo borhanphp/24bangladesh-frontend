@@ -120,9 +120,9 @@ function Header() {
             </div>
           </div>
 
-          <div className="d-flex flex-column justify-content-between align-items-end mt-4">
+          <div className="d-flex flex-column justify-content-between align-items-end">
                          {/* Desktop: Social Icons and Links Side by Side */}
-             <div className="d-none d-md-flex mt-3 mt-md-5 pt-2 flex-column flex-md-row align-items-center gap-3">
+             <div className="d-none d-md-flex mt-3 mt-md-5 flex-column flex-md-row align-items-center gap-3">
                <SocialIcon
                  search={true}
                  facebook={!!viewMetaData?.facebook}
@@ -136,7 +136,7 @@ function Header() {
 
                <div className="d-none d-md-block vr"></div>
 
-               <div className="d-flex gap-2">
+               <div className="d-flex gap-2 border border-black p-1 rounded-3">
                  <Link href="/" className="text-decoration-none text-muted">
                    আর্কাইভ
                  </Link>
@@ -174,7 +174,7 @@ function Header() {
              </div>
 
                          {/* Desktop: Date */}
-             <div className="d-none d-md-flex align-items-center justify-content-center justify-content-md-end text-center text-md-end mt-2 mt-md-0">
+             <div className="d-none d-md-flex align-items-center justify-content-center justify-content-md-end text-center text-md-end mt-1 mt-md-0">
              {finalDate}
            </div>
           </div>
@@ -199,7 +199,7 @@ function Header() {
                   className="nav-link nav-hover fw-bold mx-2 text-nowrap"
                   href="/latest-news"
                 >
-                  সর্বশেষ
+                  প্রচ্ছদ
                 </Link>
               </li>
               {topMenu?.categories

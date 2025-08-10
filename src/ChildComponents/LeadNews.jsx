@@ -18,11 +18,7 @@ function LeadNews(props) {
           </div>
         </div>
         <div className="col-sm-12 col-md-6 mb-3  lead-news">
-          <h1 className="h1">
-            {(props.headline || "").length > 80
-              ? `${props.headline.slice(0, 80)}...`
-              : props.headline}
-          </h1>
+          <h1 className="h1">{props.headline}</h1>
 
           <div
             className="my-3 open-window"

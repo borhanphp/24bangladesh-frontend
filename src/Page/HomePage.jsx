@@ -20,6 +20,7 @@ import SectionFourteen from "@/Components/HomePage/SectionFourteen";
 import SectionFive from "@/Components/HomePage/SectionFive";
 import SectionFour from "@/Components/HomePage/SectionFour";
 import SectionNine from "@/Components/HomePage/SectionNine";
+import GoogleSearch from "@/Components/GoogleSearch";
 // StockMarquee
 import { BASE_URL } from "@/api/config";
 
@@ -155,6 +156,8 @@ function HomePage() {
             latestNews={topNews?.latestNews}
           />
         )}
+        {/* Google Search */}
+        {/* <GoogleSearch /> */}
         {/* section Two */}
         {/* {topNews?.latestNews && <SectionTwo data={topNews?.latestNews} />} */}
         {/* ads */}

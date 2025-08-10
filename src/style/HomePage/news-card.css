@@ -1,6 +1,8 @@
 .third-news-card h2 {
   font-size: 18px;
   line-height: 25px;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 .forth-news-card h1 {
   font-size: 20px;

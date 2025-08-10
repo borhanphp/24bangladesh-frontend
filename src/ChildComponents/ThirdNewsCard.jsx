@@ -12,9 +12,7 @@ function ThirdNewsCard(props) {
               className="h2"
               style={{ fontWeight: props.bold ? "bold" : "normal" }}
             >
-              {(props.title || "").length > (props.length || 50)
-                ? `${props.title.slice(0, props.length || 50)}...`
-                : props.title}{" "}
+              {props.title}{" "}
             </h2>
           </div>
           <div className="col-6">

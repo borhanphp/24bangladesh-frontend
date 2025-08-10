@@ -10,12 +10,18 @@ import { useNewsStore } from "@/providers/useNewsStore";
 function TabSection(data) {
   const [tab, setTab] = useState(1);
   const { allNews } = useNewsStore();
-  
-  // Get popular news from the store
-  const viewPopularNews = allNews.filter(news => news.isPopular).slice(0, 10);
+
+  // Get popular news from the store by visitor count
+  const viewPopularNews = allNews
+    .filter((news) => news.visitor && news.visitor > 0)
+    .sort((a, b) => (b.visitor || 0) - (a.visitor || 0))
+    .slice(0, 10);
 
   const tabAllNews =
     Array.isArray(data?.data) && data.data.length > 0 ? data.data : null;
+
+  console.log("allNews", tabAllNews);
+
 
   const tabCounter = (e) => {
     setTab(e);

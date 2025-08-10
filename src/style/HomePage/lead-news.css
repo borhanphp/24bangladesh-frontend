@@ -4,6 +4,8 @@
 .lead-news h1 {
   font-size: 30px;
   line-height: 50px;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 .lead-news p {
   color: #8f8f8f;
@@ -29,6 +31,8 @@
   .lead-news h1 {
     font-size: 25px;
     line-height: 32px;
+    word-break: break-word;
+    overflow-wrap: anywhere;
   }
   .lead-news p {
     color: #8f8f8f;
@@ -39,6 +43,8 @@
 .category-lead-news h1 {
   font-size: 30px;
   line-height: 50px;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 .category-lead-news p {
   color: #8f8f8f;

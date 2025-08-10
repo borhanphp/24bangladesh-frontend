@@ -6,6 +6,15 @@ body {
   font-family: "SolaimanLipi", sans-serif !important;
   background-color: #124b650e !important;
 }
+
+/* Hide Google Translate UI elements */
+.goog-te-banner-frame,
+.VIpgJd-ZVi9od-ORHb-OEVmCD,
+#goog-gt-tt,
+.goog-te-balloon-frame {
+  display: none !important;
+}
+body { top: 0 !important; }
 .pointer {
   cursor: pointer;
 }

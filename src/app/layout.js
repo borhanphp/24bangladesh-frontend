@@ -9,7 +9,7 @@ import { BASE_URL } from "../api/config";
 import Header from "@/CommonComponents/Header";
 import Footer from "@/CommonComponents/Footer";
 // import GoogleTranslateLoader from "@/app/helper/GoogleTranslateLoader";
-import LanguageSwitcher from "@/app/helper/LanguageSwitcher";
+import GoogleTranslateLoader from "@/app/helper/GoogleTranslateLoader";
 // providers
 import Provider from "@/providers/index";
 import KeyboardShortcuts from "@/ChildComponents/KeyboardShortcuts";
@@ -100,7 +100,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         // className={` antialiased`}
       >
-        {/* <GoogleTranslateLoader /> */}
+        <GoogleTranslateLoader />
         <Provider>
           <LayoutContent>{children}</LayoutContent>
         </Provider>

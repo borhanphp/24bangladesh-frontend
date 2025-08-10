@@ -39,6 +39,7 @@ function Footer() {
               height={80}
               alt="Logo"
               className="pointer img-fluid"
+              style={{ width: '80px', height: '80px' }}
             />
           </div>
           <div className="col-sm-6">

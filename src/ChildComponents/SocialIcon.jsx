@@ -121,6 +121,7 @@ function SocialIcon({
   linkedin,
   youtube,
   search,
+  onSearchClick,
   links = {},
 }) {
   const { totalNewsCount } = useNewsStore();
@@ -191,8 +192,8 @@ function SocialIcon({
             cursor: "pointer",
             boxShadow: "0 0 5px rgba(0,0,0,0.1)",
           }}
-                     title={`Search (Ctrl+K) - ${totalNewsCount} news loaded`}
-           onClick={() => router.push("/search")}
+          title={`Search (Ctrl+K) - ${totalNewsCount} news loaded`}
+          onClick={() => (typeof onSearchClick === "function" ? onSearchClick() : router.push("/search"))}
         >
           <FaSearch />
         </div>

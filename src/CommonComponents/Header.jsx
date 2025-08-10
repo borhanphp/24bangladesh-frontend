@@ -12,6 +12,7 @@ import { IoSearch } from "react-icons/io5";
 import { IoMdMenu } from "react-icons/io";
 import { FaSearch } from "react-icons/fa";
 import SiteVarNav from "@/ChildComponents/SiteVarNav";
+import GoogleSearch from "@/Components/GoogleSearch";
 
 import LogoImage from "../../public/image/logoFinal.jpg";
 
@@ -40,8 +41,32 @@ function Header() {
   const today = new Date();
 
   const [showNav, setShowNav] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
   const [hoveredCatId, setHoveredCatId] = useState(null);
   const topMenu = data?.navigation?.find((m) => m.idNumber === "1");
+
+  const setGoogleTranslateLanguage = (fromLang, toLang) => {
+    try {
+      const domain = window.location.hostname;
+      const cookieValue = `/${fromLang}/${toLang}`;
+      // Set cookies for both root and current domain to be safe
+      document.cookie = `googtrans=${cookieValue};path=/;`; // root
+      document.cookie = `googtrans=${cookieValue};path=/;domain=.${domain}`; // domain
+      // Update hash so the script picks it up
+      window.location.hash = `#googtrans(${fromLang}|${toLang})`;
+      // If translator is already loaded, reload ensures full-page application
+      setTimeout(() => {
+        window.location.reload();
+      }, 50);
+    } catch (e) {
+      console.error("Failed to switch language via Google Translate", e);
+    }
+  };
+
+  const onEnglishClick = (e) => {
+    e.preventDefault();
+    setGoogleTranslateLanguage("bn", "en");
+  };
 
   // Using date-bengali-revised to get Bangla date
   const cal = new Calendar();
@@ -131,23 +156,24 @@ function Header() {
                  instagram={!!viewMetaData?.instagram}
                  linkedin={!!viewMetaData?.linkedin}
                  youtube={!!viewMetaData?.youtube}
+                 onSearchClick={() => setShowSearch((s) => !s)}
                  links={viewMetaData}
                />
 
                <div className="d-none d-md-block vr"></div>
 
-               <div className="d-flex gap-2 border border-black p-1 rounded-3">
-                 <Link href="/" className="text-decoration-none text-muted">
+               <div className="d-flex gap-2 rounded-3">
+                 <Link href="/" className="p-1 rounded-3 border border-black text-decoration-none text-muted">
                    আর্কাইভ
                  </Link>
-                 <Link href="/" className="text-decoration-none text-muted">
+                 <a href="#" onClick={onEnglishClick} className="p-1 rounded-3 border border-black text-decoration-none text-muted">
                    English
-                 </Link>
+                 </a>
                </div>
              </div>
 
                          {/* Mobile: Social Icons and Date in same div */}
-             <div className="d-flex d-md-none flex-column align-items-end gap-2">
+              <div className="d-flex d-md-none flex-column align-items-end gap-2">
                <SocialIcon
                  search={true}
                  facebook={!!viewMetaData?.facebook}
@@ -156,6 +182,7 @@ function Header() {
                  instagram={!!viewMetaData?.instagram}
                  linkedin={!!viewMetaData?.linkedin}
                  youtube={!!viewMetaData?.youtube}
+                 onSearchClick={() => setShowSearch((s) => !s)}
                  links={viewMetaData}
                />
                
@@ -163,9 +190,9 @@ function Header() {
                  <Link href="/" className="text-decoration-none text-muted small">
                    আর্কাইভ
                  </Link>
-                 <Link href="/" className="text-decoration-none text-muted small">
+                 <a href="#" onClick={onEnglishClick} className="text-decoration-none text-muted small">
                    English
-                 </Link>
+                 </a>
                </div>
                
                <div className="text-end small">
@@ -197,7 +224,7 @@ function Header() {
               <li className="nav-item">
                 <Link
                   className="nav-link nav-hover fw-bold mx-2 text-nowrap"
-                  href="/latest-news"
+                  href="/"
                 >
                   প্রচ্ছদ
                 </Link>
@@ -260,6 +287,12 @@ function Header() {
           </nav>
         </div>
         {showNav && <SiteVarNav off={() => setShowNav(false)} />}
+        {/* Inline search bar below navbar */}
+        <div className={`w-100 bg-white border-top ${showSearch ? "d-block" : "d-none"}`} style={{ zIndex: 1500 }}>
+          <div className="container py-3">
+            <GoogleSearch />
+          </div>
+        </div>
       </div>
 
       <div className="marquee-container">

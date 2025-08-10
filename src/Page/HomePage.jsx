@@ -149,6 +149,8 @@ function HomePage() {
             height="80"
           />
         </div> */}
+        {/* <GoogleSearch /> */}
+
         {/* section one */}
         {topNews?.leadNews && (
           <SectionOne
@@ -157,7 +159,6 @@ function HomePage() {
           />
         )}
         {/* Google Search */}
-        {/* <GoogleSearch /> */}
         {/* section Two */}
         {/* {topNews?.latestNews && <SectionTwo data={topNews?.latestNews} />} */}
         {/* ads */}

@@ -24,7 +24,7 @@ const GoogleSearch = () => {
         <div className="row justify-content-center">
           <div className="col-md-8">
             <div className="search-box p-3 bg-light rounded shadow-sm">
-              <h4 className="text-center mb-3">সাইটে অনুসন্ধান করুন</h4>
+              {/* <h4 className="text-center mb-3">সাইটে অনুসন্ধান করুন</h4> */}
               <div className="gcse-search"></div>
             </div>
           </div>

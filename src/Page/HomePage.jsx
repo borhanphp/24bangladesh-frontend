@@ -177,7 +177,72 @@ function HomePage() {
         <StockMarquee dataUrl={`${BASE_URL}/dsc`} />
       </div>
 
+
+
+
+
+
+{/* 
+section three = national, section nine = health/8 
+section four = business, section ten = politics/7
+section five = sports, section eleven = exclusive/10
+section six = entertainment, section twelve = economics/11
+section seven = technology, section thirteen = jobs/12
+section eight = lifestyle, section fourteen = lifestyle/13
+
+
+*/}
+
       <div className="container ">
+
+        {/* section Thirteen - jobs, section Nine - health */}
+        {/* {sectionThree && (
+          <SectionThirteen
+            data={sectionThree?.news}
+            dataTwo={sectionNine?.news}
+            title={
+              data?.sectionInfo?.find((s) => s.idNumber === "2")?.category
+                ?.name || "Unknown Section"
+            }
+            titleTwo={
+              data?.sectionInfo?.find((s) => s.idNumber === "8")?.category
+                ?.name || "Unknown Section"
+            }
+          />
+        )} */}
+
+      {/* politics/education */}
+      {/* {sectionThree && (
+          <SectionThirteen
+            data={sectionThree?.news}
+            dataTwo={[]}
+            title={
+              data?.sectionInfo?.find((s) => s.idNumber === "7")?.category
+                ?.name || "Unknown Section"
+            }
+            titleTwo={
+              data?.sectionInfo?.find((s) => s.idNumber === "0")?.category
+                ?.name || "শিক্ষা"
+            }
+          />
+        )} */}
+
+
+        {/* {sectionThiteen && (
+          <SectionThirteen
+            data={sectionThree?.news}
+            dataTwo={sectionNine?.news}
+            title={
+              data?.sectionInfo?.find((s) => s.idNumber === "2")?.category
+                ?.name || "Unknown Section"
+            }
+            titleTwo={
+              data?.sectionInfo?.find((s) => s.idNumber === "8")?.category
+                ?.name || "Unknown Section"
+            }
+          />
+        )} */}
+        
         {/* section Three */}
         {sectionThree && (
           <SectionThree
@@ -264,7 +329,7 @@ function HomePage() {
       {topNews && postedNews && <SectionNine />}
 
       <div className="container">
-        {/* section Ten */}
+        {/* section Ten - politics*/}
         {sectionEight && (
           <SectionTen
             data={sectionEight?.news}
@@ -279,7 +344,7 @@ function HomePage() {
             }
           />
         )}
-        {/* section Eleven */}
+        {/* section Eleven - exclusive */}
         {sectionTen && (
           <SectionEleven
             data={sectionTen?.news}
@@ -289,7 +354,7 @@ function HomePage() {
             }
           />
         )}
-        {/* section Twelve */}
+        {/* section Twelve - economics */}
         {sectionEleven && (
           <SectionTwelve
             data={sectionEleven?.news}
@@ -304,7 +369,7 @@ function HomePage() {
             }
           />
         )}
-        {/* section Thirteen */}
+        {/* section Thirteen - jobs */}
         {sectionThiteen && (
           <SectionThirteen
             data={sectionThiteen?.news}
@@ -319,7 +384,7 @@ function HomePage() {
             }
           />
         )}
-        {/* section Fourteen */}
+        {/* section Fourteen - lifestyle */}
         {sectionFifteen && (
           <SectionFourteen
             data={sectionFifteen?.news}

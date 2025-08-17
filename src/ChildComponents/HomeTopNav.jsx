@@ -35,7 +35,7 @@ function HomeTopNav() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link fw-bold mx-2 text-nowrap" href="/">
+              <Link className="nav-link fw-bold mx-2 text-nowrap" href="/archive">
                 আর্কাইভ <IoIosArrowForward className="mt-0" />
               </Link>
             </li>

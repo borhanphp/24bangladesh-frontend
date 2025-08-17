@@ -39,3 +39,58 @@ a {
 .img-zoom-container:hover img {
   transform: scale(1.1);
 }
+
+/* Hide Google CSE branding: "Enhanced by Google" */
+.gsc-branding,
+.gcsc-branding,
+.gsc-branding-text,
+.gsc-branding-img {
+  display: none !important;
+}
+
+/* Hide CSE watermark/placeholder like 'Enhanced by Google' inside the input */
+.gsc-control-cse .gsc-input-box .gsib_b { /* watermark node */
+  display: none !important;
+}
+.gcse-search .gsib_b { /* fallback selector */
+  display: none !important;
+}
+input.gsc-input::placeholder,
+input.gsc-input::-webkit-input-placeholder,
+input.gsc-input::-moz-placeholder,
+input.gsc-input:-ms-input-placeholder {
+  color: transparent !important;
+}
+
+/* Remove top/bottom paddings/margins of Google CSE search box */
+.google-search-container,
+.gcse-search,
+.gsc-control-cse,
+.gsc-control-wrapper-cse,
+.gsc-control-cse .gsc-search-box,
+.gsc-control-cse .gsc-search-box-tools,
+.gsc-control-cse .gsc-input-box,
+.gsc-control-cse .gsc-search-button {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Make the Google CSE search button match site style */
+.gcse-search input.gsc-search-button-v2,
+.gsc-control-cse input.gsc-search-button-v2 {
+  background-color: var(--brand-color) !important;
+  border: none !important;
+  color: #ffffff !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border-radius: 4px !important;
+  height: 36px !important;
+  min-width: 44px !important;
+  padding: 0 14px !important;
+}
+.gcse-search input.gsc-search-button-v2:hover,
+.gsc-control-cse input.gsc-search-button-v2:hover {
+  filter: brightness(0.92) !important;
+}

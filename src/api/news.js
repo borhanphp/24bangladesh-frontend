@@ -32,3 +32,20 @@ export const useSearchNews = async (query) => {
   }
   return apiRequest("get", `/news/web/search?q=${encodeURIComponent(query.trim())}`);
 };
+
+export const getArchive = async (params = {}) => {
+  const query = new URLSearchParams();
+  Object.entries(params).forEach(([k, v]) => {
+    if (v !== undefined && v !== null && v !== "") query.append(k, v);
+  });
+  const q = query.toString();
+  return apiRequest("get", `/news/archive${q ? `?${q}` : ""}`);
+};
+
+export const getWebCategories = async () => {
+  return apiRequest("get", "/categories");
+};
+
+export const getLocations = async () => {
+  return apiRequest("get", "/location");
+};

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import useMenus from "@/providers/useMenus";
@@ -44,6 +44,7 @@ function Header() {
   const [showSearch, setShowSearch] = useState(false);
   const [hoveredCatId, setHoveredCatId] = useState(null);
   const topMenu = data?.navigation?.find((m) => m.idNumber === "1");
+  const searchRef = useRef(null);
 
   const setGoogleTranslateLanguage = (fromLang, toLang) => {
     try {
@@ -122,6 +123,31 @@ function Header() {
     attempt();
   };
 
+  // Hide search bar when clicking outside or pressing Escape
+  useEffect(() => {
+    if (!showSearch) return;
+
+    const handleOutside = (e) => {
+      if (searchRef.current && !searchRef.current.contains(e.target)) {
+        setShowSearch(false);
+      }
+    };
+
+    const handleEsc = (e) => {
+      if (e.key === "Escape") setShowSearch(false);
+    };
+
+    document.addEventListener("mousedown", handleOutside, true);
+    document.addEventListener("touchstart", handleOutside, true);
+    document.addEventListener("keydown", handleEsc, true);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutside, true);
+      document.removeEventListener("touchstart", handleOutside, true);
+      document.removeEventListener("keydown", handleEsc, true);
+    };
+  }, [showSearch]);
+
   return (
     <>
             <div className="container-fluid">
@@ -163,7 +189,7 @@ function Header() {
                <div className="d-none d-md-block vr"></div>
 
                <div className="d-flex gap-2 rounded-3">
-                 <Link href="/" className="p-1 rounded-3 border border-black text-decoration-none text-muted">
+                 <Link href="/archive" className="p-1 rounded-3 border border-black text-decoration-none text-muted">
                    আর্কাইভ
                  </Link>
                  <a href="#" onClick={onEnglishClick} className="p-1 rounded-3 border border-black text-decoration-none text-muted">
@@ -187,7 +213,7 @@ function Header() {
                />
                
                <div className="d-flex gap-2">
-                 <Link href="/" className="text-decoration-none text-muted small">
+                 <Link href="/archive" className="text-decoration-none text-muted small">
                    আর্কাইভ
                  </Link>
                  <a href="#" onClick={onEnglishClick} className="text-decoration-none text-muted small">
@@ -288,8 +314,8 @@ function Header() {
         </div>
         {showNav && <SiteVarNav off={() => setShowNav(false)} />}
         {/* Inline search bar below navbar */}
-        <div className={`w-100 bg-white border-top ${showSearch ? "d-block" : "d-none"}`} style={{ zIndex: 1500 }}>
-          <div className="container py-3">
+        <div ref={searchRef} className={`w-100 bg-white border-top ${showSearch ? "d-block" : "d-none"}`} style={{ zIndex: 1500 }}>
+          <div className="container py-3" onClick={(e) => e.stopPropagation()}>
             <GoogleSearch />
           </div>
         </div>

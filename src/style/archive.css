@@ -1,0 +1,38 @@
+.archive-filter .input-group-text {
+  background-color: #f4f6f8;
+}
+
+.archive-card {
+  background: #ffffff;
+  border: 1px solid #e6e8eb;
+  border-radius: 10px;
+  padding: 10px;
+  transition: box-shadow 0.2s ease;
+}
+
+.archive-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.archive-title {
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.archive-date {
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+.archive-load-more {
+  background-color: #1e6f98;
+  color: #ffffff;
+  border: none;
+}
+
+.archive-load-more:hover {
+  background-color: #165979;
+  color: #ffffff;
+}
+
+

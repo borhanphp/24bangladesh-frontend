@@ -263,7 +263,7 @@ section eight = lifestyle, section fourteen = lifestyle/13
           />
         </div> */}
         {/* section Four */}
-        {sectionFour && <SectionFour />}
+        {/* {sectionFour && <SectionFour />} */}
         {/* section Five */}
         {sectionFour && (
           <SectionFive

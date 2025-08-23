@@ -155,17 +155,17 @@ function Header() {
           
           {/* Logo */}
           <div className="d-flex align-items-center">
-            <div className="my-3 d-flex justify-content-center align-items-center">
+            <div className="my-2 d-flex justify-content-center align-items-center">
               {/* logo */}
-              <Link className="my-2" href="/">
+              <Link className="" href="/">
                 <Image
                   // src={LogoImage}
                   src={`${IMAGE_URL}/${viewMetaData?.logo}`}
-                  width={380}
-                  height={80}
+                  width={100}
+                  height={100}
                   alt="Logo"
                   className="pointer"
-                  style={{ width: '80px', height: '80px' }}
+                  style={{ width: '100px', height: '100px' }}
                 />
               </Link>
             </div>

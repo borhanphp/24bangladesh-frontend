@@ -49,3 +49,7 @@ export const getWebCategories = async () => {
 export const getLocations = async () => {
   return apiRequest("get", "/location");
 };
+
+export const getCategoryNews = async (categorySlug) => {
+  return apiRequest("get", `/news/web/category/${categorySlug}`);
+};

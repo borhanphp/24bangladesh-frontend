@@ -25,6 +25,7 @@ import GoogleSearch from "@/Components/GoogleSearch";
 import { BASE_URL } from "@/api/config";
 
 import StockMarquee from "@/Components/StockMarquee";
+import PhotoGallery from "@/Components/PhotoGallery";
 
 const stockData = [
   { symbol: "DSEX", price: "6,248.10", change: 1.25 },
@@ -400,6 +401,9 @@ section eight = lifestyle, section fourteen = lifestyle/13
           />
         )}
       </div>
+      
+      {/* Photo Gallery Section */}
+      <PhotoGallery />
     </div>
   );
 }

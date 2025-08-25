@@ -295,6 +295,17 @@ section eight = lifestyle, section fourteen = lifestyle/13
           />
         )}
 
+ {/* section Eleven - exclusive */}
+ {sectionTen && (
+          <SectionEleven
+            data={sectionTen?.news}
+            title={
+              data?.sectionInfo?.find((s) => s.idNumber === "9")?.category
+                ?.name || "Unknown Section"
+            }
+          />
+        )}
+        
         {/* section Nine */}
       {/* video */}
       {topNews && postedNews && <SectionNine />}
@@ -464,17 +475,8 @@ section eight = lifestyle, section fourteen = lifestyle/13
             }
           />
         )} */}
-        {/* section Eleven - exclusive */}
-        {/* {sectionTen && (
-          <SectionEleven
-            data={sectionTen?.news}
-            title={
-              data?.sectionInfo?.find((s) => s.idNumber === "9")?.category
-                ?.name || "Unknown Section"
-            }
-          />
-        )}
-         */}
+       
+        
         {/* section Thirteen - jobs */}
         {/* {sectionThiteen && (
           <SectionThirteen

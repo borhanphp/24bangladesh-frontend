@@ -46,7 +46,7 @@ const PhotoGallery = () => {
       <div className="thumbs-gallery-section my-5">
         <div className="container">
           <div className="section-header text-center mb-4">
-            <h2 className="gallery-title">ফটো গ্যালারি</h2>
+            <h2 className="gallery-title">ছবিঘর</h2>
             <div className="title-divider"></div>
           </div>
           <div className="d-flex justify-content-center">
@@ -59,12 +59,12 @@ const PhotoGallery = () => {
     );
   }
 
-  if (error || !galleryImages.length) {
+  if (error || !galleryImages?.length) {
     return (
       <div className="thumbs-gallery-section my-5">
         <div className="container">
           <div className="section-header text-center mb-4">
-            <h2 className="gallery-title">ফটো গ্যালারি</h2>
+            <h2 className="gallery-title">ছবিঘর</h2>
             <div className="title-divider"></div>
           </div>
           <div className="text-center">
@@ -76,12 +76,12 @@ const PhotoGallery = () => {
   }
 
   return (
-    <div className="thumbs-gallery-section my-5">
+    <div className="">
       <div className="container">
         <div className="row">
           <div className="col-12">
             <div className="section-header text-center mb-4">
-              <h2 className="gallery-title">ফটো গ্যালারি</h2>
+              <h2 className="">ছবিঘর</h2>
               <div className="title-divider"></div>
             </div>
             

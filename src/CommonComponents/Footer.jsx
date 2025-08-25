@@ -43,53 +43,8 @@ function Footer() {
             />
           </div>
           {/* connect  */}
-          <div className="order-3 order-md-2 col-md-6 d-flex flex-wrap text-center justify-content-center mb-3">
-             <div className="d-flex align-items-center">
-            <p className="mb-0">{viewMetaData?.address}</p>
-          </div>
-          <div className="d-flex flex-wrap text-center justify-content-center">
-         
-
-          <div className="d-flex align-items-center me-3">
-            <FaPhoneAlt className="me-1" />
-            <p className="mb-0">{viewMetaData?.mobile}</p>
-          </div> <br/>
-
-          <div className="d-flex align-items-center me-3">
-            <FaMobile className="me-1" />
-            <p className="mb-0">{viewMetaData?.phone}</p>
-          </div>
-
-          <div className="d-flex align-items-center me-3">
-            <IoLogoWhatsapp className="me-1" />
-            <p className="mb-0">{viewMetaData?.whatsApps}</p>
-          </div>
-
-          <div className="d-flex align-items-center me-3">
-            <MdEmail className="me-1" />
-            <p className="mb-0" style={{ fontFamily: "initial" }}>
-              {viewMetaData?.email}
-            </p>
-          </div>
-        </div>
-          </div>
-        
-          <div className="order-2 order-md-3 col-md-3">
-            <div
-              className="my-3 open-window text-center text-md-end"
-              dangerouslySetInnerHTML={{
-                __html: viewFooterData?.details,
-              }}
-              style={{
-                display: "-webkit-box",
-                WebkitBoxOrient: "vertical",
-                overflow: "hidden",
-                textOverflow: "ellipsis",
-              }}
-            />
-          </div>
-        </div>
-        <nav className="navbar navbar-expand-lg w-100">
+          <div className="order-3 order-md-2 col-md-6 mb-3">
+          <nav className="navbar navbar-expand-lg w-100">
           <ul className="navbar-nav d-flex flex-wrap justify-content-center px-2 w-100">
             {viewPageData?.map((page) => (
               <li key={page._id} className="nav-item">
@@ -145,6 +100,57 @@ function Footer() {
             </li>
           </ul> */}
         </nav>
+             <div className=" text-center mb-2">
+            <p className="mb-0">{viewMetaData?.address}</p>
+          </div>
+          <div className="d-flex flex-wrap text-center justify-content-center">
+         
+
+          <div className="d-flex align-items-center me-3">
+            <FaPhoneAlt className="me-1" />
+            <p className="mb-0">{viewMetaData?.mobile}</p>
+          </div> <br/>
+
+          <div className="d-flex align-items-center me-3">
+            <FaMobile className="me-1" />
+            <p className="mb-0">{viewMetaData?.phone}</p>
+          </div>
+
+          <div className="d-flex align-items-center me-3">
+            <IoLogoWhatsapp className="me-1" />
+            <p className="mb-0">{viewMetaData?.whatsApps}</p>
+          </div>
+
+          
+        </div>
+        <div className="text-center d-flex justify-content-center">
+        <div className="d-flex align-items-center me-3 mt-2">
+            <MdEmail className="me-1" />
+            <p className="mb-0" style={{ fontFamily: "initial" }}>
+              {viewMetaData?.email}
+            </p>
+          </div>
+        </div>
+       
+          </div>
+          
+        
+          <div className="order-2 order-md-3 col-md-3">
+            <div
+              className="my-3 open-window text-center text-md-end"
+              dangerouslySetInnerHTML={{
+                __html: viewFooterData?.details,
+              }}
+              style={{
+                display: "-webkit-box",
+                WebkitBoxOrient: "vertical",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+              }}
+            />
+          </div>
+        </div>
+       
 
         
         {/* Social  */}

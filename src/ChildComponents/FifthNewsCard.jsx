@@ -12,6 +12,7 @@ function FifthNewsCard(props) {
           width={500}
           height={500}
           alt={props.title}
+          objectFit="cover"
         />
         <h1>{props.title}</h1>
       </div>

@@ -32,19 +32,51 @@ function Footer() {
     <div className="footer py-3">
       <div className="container mobile-text-center">
         <div className="row">
-          <div className="col-sm-6 mb-3">
+          <div className="col-md-3 mb-3 order-1">
             <Image
               src={`${IMAGE_URL}/${viewMetaData?.logo}`}
               width={280}
               height={80}
               alt="Logo"
               className="pointer img-fluid"
-              style={{ width: '80px', height: '80px' }}
+              style={{ width: '170px', height: '170px' }}
             />
           </div>
-          <div className="col-sm-6">
+          {/* connect  */}
+          <div className="order-3 order-md-2 col-md-6 d-flex flex-wrap text-center justify-content-center mb-3">
+             <div className="d-flex align-items-center">
+            <p className="mb-0">{viewMetaData?.address}</p>
+          </div>
+          <div className="d-flex flex-wrap text-center justify-content-center">
+         
+
+          <div className="d-flex align-items-center me-3">
+            <FaPhoneAlt className="me-1" />
+            <p className="mb-0">{viewMetaData?.mobile}</p>
+          </div> <br/>
+
+          <div className="d-flex align-items-center me-3">
+            <FaMobile className="me-1" />
+            <p className="mb-0">{viewMetaData?.phone}</p>
+          </div>
+
+          <div className="d-flex align-items-center me-3">
+            <IoLogoWhatsapp className="me-1" />
+            <p className="mb-0">{viewMetaData?.whatsApps}</p>
+          </div>
+
+          <div className="d-flex align-items-center me-3">
+            <MdEmail className="me-1" />
+            <p className="mb-0" style={{ fontFamily: "initial" }}>
+              {viewMetaData?.email}
+            </p>
+          </div>
+        </div>
+          </div>
+        
+          <div className="order-2 order-md-3 col-md-3">
             <div
-              className="my-3 open-window text-end"
+              className="my-3 open-window text-center text-md-end"
               dangerouslySetInnerHTML={{
                 __html: viewFooterData?.details,
               }}
@@ -114,34 +146,7 @@ function Footer() {
           </ul> */}
         </nav>
 
-        {/* connect  */}
-        <div className="d-flex flex-wrap text-center justify-content-center mb-3">
-          <div className="d-flex align-items-center me-3 mb-2">
-            <p className="mb-0">{viewMetaData?.address}</p>
-          </div>
-
-          <div className="d-flex align-items-center me-3 my-2">
-            <FaPhoneAlt className="me-1" />
-            <p className="mb-0">{viewMetaData?.mobile}</p>
-          </div>
-
-          <div className="d-flex align-items-center me-3 mb-2">
-            <FaMobile className="me-1" />
-            <p className="mb-0">{viewMetaData?.phone}</p>
-          </div>
-
-          <div className="d-flex align-items-center me-3 mb-2">
-            <IoLogoWhatsapp className="me-1" />
-            <p className="mb-0">{viewMetaData?.whatsApps}</p>
-          </div>
-
-          <div className="d-flex align-items-center me-3 mb-2">
-            <MdEmail className="me-1" />
-            <p className="mb-0" style={{ fontFamily: "initial" }}>
-              {viewMetaData?.email}
-            </p>
-          </div>
-        </div>
+        
         {/* Social  */}
         <div className="d-flex justify-content-center">
           {viewMetaData && (

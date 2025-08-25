@@ -66,7 +66,6 @@ const StockMarquee = ({ dataUrl }) => {
       try {
         const response = await axios.get(dataUrl, { responseType: "json" });
         const rawText = response.data.rawText;
-        console.log('response rawtext',response);
 
         if (!rawText) {
           setError("No stock data found in response");

@@ -25,21 +25,20 @@ const PhotoGallery = () => {
     queryFn: () => getCategoryNews('photo-gallery'),
   });
 
+
   // Extract images from category posts
   const galleryImages = React.useMemo(() => {
     if (!categoryData?.posts || !Array.isArray(categoryData.posts)) {
       return [];
     }
 
-    return categoryData.posts
-      .filter(post => post.images && post.images.length > 0)
-      .map(post => ({
-        id: post.id || post._id,
-        src: `${IMAGE_URL}/${post.images[0]}`,
-        alt: post.title || 'Gallery Image',
-        title: post.title || 'ছবির গ্যালারি',
-        link: post.newsSlug ? `/${post.newsSlug}` : '#'
-      }));
+    return categoryData?.posts?.map(post => ({
+      id: post.id || post._id,
+      src: `${IMAGE_URL}/${post?.image}`,
+      alt: post.title || 'Gallery Image',
+      title: post.title || 'ছবির গ্যালারি',
+      link: post.newsSlug ? `/${post.newsSlug}` : '#'
+    }));
   }, [categoryData]);
 
   if (isLoading) {

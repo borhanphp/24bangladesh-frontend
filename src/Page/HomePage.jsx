@@ -35,6 +35,7 @@ const stockData = [
 ];
 
 import { getNews, getTopNews } from "@/api/news";
+import CommonSection from "@/Components/HomePage/CommonSectionThree";
 
 function HomePage() {
   const [isOnline, setIsOnline] = useState(true);
@@ -58,8 +59,6 @@ function HomePage() {
     queryKey: ["news"],
     queryFn: getNews,
   });
-
-  console.log("home page news", topNews);
 
   useEffect(() => {
     const handleOnline = () => setIsOnline(true);
@@ -122,21 +121,40 @@ function HomePage() {
     (section) => section.idNumber === 11
   );
   const sectionThiteen = data?.sections?.find(
-    (section) => section.idNumber === 12
+    (section) => section.idNumber === 21
   );
   const sectionFourteen = data?.sections?.find(
-    (section) => section.idNumber === 13
+    (section) => section.idNumber === 22
   );
   const sectionFifteen = data?.sections?.find(
-    (section) => section.idNumber === 14
+    (section) => section.idNumber === 25
   );
   const sectionSixteen = data?.sections?.find(
-    (section) => section.idNumber === 15
+    (section) => section.idNumber === 27
   );
+
+  const opinion = data?.sections?.find((section) => section.idNumber === 1);
+  // const feature = data?.sections?.find((section) => section.idNumber === 16);
+  // const urbanLife = data?.sections?.find((section) => section.idNumber === 18);
+  // const education = data?.sections?.find((section) => section.idNumber === 50);
+  // const environment = data?.sections?.find((section) => section.idNumber === 17);
+  // const campus = data?.sections?.find((section) => section.idNumber === 19);
+
+  const sectionSeventeen = data?.sections?.find((section) => section.idNumber === 16);
+  const sectionEighteen = data?.sections?.find((section) => section.idNumber === 11);
+  const sectionNineteen = data?.sections?.find((section) => section.idNumber === 17);
+  const sectionTwenty = data?.sections?.find((section) => section.idNumber === 18);
+  const sectionTwentyOne = data?.sections?.find((section) => section.idNumber === 13);
+  const sectionTwentyTwo = data?.sections?.find((section) => section.idNumber === 12);
+  const sectionTwentyThree = data?.sections?.find((section) => section.idNumber === 14);
+  const sectionTwentyFour = data?.sections?.find((section) => section.idNumber === 19);
+  const sectionTwentyFive = data?.sections?.find((section) => section.idNumber === 15);
 
   if (isLoading) {
     return <FullPageLoader />;
   }
+
+  console.log('data for category',data)
 
   return (
     <div>
@@ -196,8 +214,8 @@ section eight = lifestyle, section fourteen = lifestyle/13
 
       <div className="container ">
 
-        {/* section Thirteen - jobs, section Nine - health */}
-        {/* {sectionThree && (
+        {/* section three - national, section Nine - health */}
+        {sectionThree && (
           <SectionThirteen
             data={sectionThree?.news}
             dataTwo={sectionNine?.news}
@@ -210,42 +228,79 @@ section eight = lifestyle, section fourteen = lifestyle/13
                 ?.name || "Unknown Section"
             }
           />
-        )} */}
+        )}
 
       {/* politics/education */}
-      {/* {sectionThree && (
+      {sectionThree && (
           <SectionThirteen
             data={sectionThree?.news}
-            dataTwo={[]}
+            dataTwo={sectionFifteen?.news}
             title={
               data?.sectionInfo?.find((s) => s.idNumber === "7")?.category
                 ?.name || "Unknown Section"
             }
             titleTwo={
-              data?.sectionInfo?.find((s) => s.idNumber === "0")?.category
-                ?.name || "শিক্ষা"
+              data?.sectionInfo?.find((s) => s.idNumber === "25")?.category
+                ?.name || "Unknown Section"
             }
           />
-        )} */}
+        )}
 
 
-        {/* {sectionThiteen && (
+        {sectionFour && (
           <SectionThirteen
-            data={sectionThree?.news}
-            dataTwo={sectionNine?.news}
+            data={sectionFour?.news}
+            dataTwo={sectionFourteen?.news}
             title={
-              data?.sectionInfo?.find((s) => s.idNumber === "2")?.category
+              data?.sectionInfo?.find((s) => s.idNumber === "3")?.category
                 ?.name || "Unknown Section"
             }
             titleTwo={
-              data?.sectionInfo?.find((s) => s.idNumber === "8")?.category
+              data?.sectionInfo?.find((s) => s.idNumber === "27")?.category
                 ?.name || "Unknown Section"
             }
           />
-        )} */}
+        )}
+
+      {sectionFive && (
+          <SectionThirteen
+            data={sectionSix?.news}
+            dataTwo={opinion?.news}
+            title={
+              data?.sectionInfo?.find((s) => s.idNumber === "5")?.category
+                ?.name || "Unknown Section"
+            }
+            titleTwo={
+              data?.sectionInfo?.find((s) => s.idNumber === "1")?.category
+                ?.name || "Unknown Section"
+            }
+          />
+        )}
+
+
+
+        {/* section Twelve - economics */}
+        {sectionEleven && (
+          <SectionTwelve
+            data={sectionEleven?.news}
+            dataTwo={sectionThiteen?.news}
+            title={
+              data?.sectionInfo?.find((s) => s.idNumber === "10")?.category
+                ?.name || "Unknown Section"
+            }
+            titleTwo={
+              data?.sectionInfo?.find((s) => s.idNumber === "26")?.category
+                ?.name || "Unknown Section"
+            }
+          />
+        )}
+
+        {/* section Nine */}
+      {/* video */}
+      {topNews && postedNews && <SectionNine />}
         
         {/* section Three */}
-        {sectionThree && (
+        {/* {sectionThree && (
           <SectionThree
             data={sectionThree?.news}
             title={
@@ -253,7 +308,7 @@ section eight = lifestyle, section fourteen = lifestyle/13
                 ?.name || "Unknown Section"
             }
           />
-        )}
+        )} */}
         {/* ads */}
         {/* <div className="my-4 vertical-bottom pb-4">
           <AdsComponents
@@ -266,7 +321,7 @@ section eight = lifestyle, section fourteen = lifestyle/13
         {/* section Four */}
         {/* {sectionFour && <SectionFour />} */}
         {/* section Five */}
-        {sectionFour && (
+        {/* {sectionFour && (
           <SectionFive
             data={sectionFour?.news}
             title={
@@ -274,7 +329,7 @@ section eight = lifestyle, section fourteen = lifestyle/13
                 ?.name || "Unknown Section"
             }
           />
-        )}
+        )} */}
 
         {/* section Six */}
         {sectionFive && (
@@ -296,7 +351,7 @@ section eight = lifestyle, section fourteen = lifestyle/13
           />
         </div> */}
         {/* section Seven */}
-        {sectionSix && (
+        {/* {sectionSix && (
           <SectionSeven
             data={sectionSix?.news}
             title={
@@ -304,7 +359,7 @@ section eight = lifestyle, section fourteen = lifestyle/13
                 ?.name || "Unknown Section"
             }
           />
-        )}
+        )} */}
         {/* ads */}
         {/* <div className="my-4 vertical-bottom pb-4">
           <AdsComponents
@@ -325,13 +380,77 @@ section eight = lifestyle, section fourteen = lifestyle/13
           />
         )}
       </div>
-      {/* section Nine */}
-      {/* video */}
-      {topNews && postedNews && <SectionNine />}
+      
 
       <div className="container">
+      <div className="row">
+      {sectionSeventeen && (
+          <CommonSection
+            data={sectionSeventeen?.news}
+            title={sectionSeventeen?.category?.name || "Unknown Section"}
+          />
+        )}
+
+        {sectionEighteen && (
+          <CommonSection
+            data={sectionEighteen?.news}
+            title={sectionEighteen?.category?.name || "Unknown Section"}
+          />
+        )}
+
+        {sectionNineteen && (
+          <CommonSection
+            data={sectionNineteen?.news}
+            title={sectionNineteen?.category?.name || "Unknown Section"}
+          />
+        )}
+
+        {sectionTwenty && (
+          <CommonSection
+            data={sectionTwenty?.news}
+            title={sectionTwenty?.category?.name || "Unknown Section"}
+          />
+        )}
+
+        {sectionTwentyOne && (
+          <CommonSection
+            data={sectionTwentyOne?.news}
+            title={sectionTwentyOne?.category?.name || "Unknown Section"}
+          />
+        )}
+
+        {sectionTwentyTwo && (
+          <CommonSection
+            data={sectionTwentyTwo?.news}
+            title={sectionTwentyTwo?.category?.name || "Unknown Section"}
+          />
+        )}
+
+        {sectionTwentyThree && (
+          <CommonSection
+            data={sectionTwentyThree?.news}
+            title={sectionTwentyThree?.category?.name || "Unknown Section"}
+          />
+        )}
+
+        {sectionTwentyFour && (
+          <CommonSection
+            data={sectionTwentyFour?.news}
+            title={sectionTwentyFour?.category?.name || "Unknown Section"}
+          />
+        )}
+
+        {sectionTwentyFive && (
+          <CommonSection
+            data={sectionTwentyFive?.news}
+            title={sectionTwentyFive?.category?.name || "Unknown Section"}
+          />
+        )}
+  
+      </div>
+
         {/* section Ten - politics*/}
-        {sectionEight && (
+        {/* {sectionEight && (
           <SectionTen
             data={sectionEight?.news}
             dataTwo={sectionNine?.news}
@@ -344,9 +463,9 @@ section eight = lifestyle, section fourteen = lifestyle/13
                 ?.name || "Unknown Section"
             }
           />
-        )}
+        )} */}
         {/* section Eleven - exclusive */}
-        {sectionTen && (
+        {/* {sectionTen && (
           <SectionEleven
             data={sectionTen?.news}
             title={
@@ -355,23 +474,9 @@ section eight = lifestyle, section fourteen = lifestyle/13
             }
           />
         )}
-        {/* section Twelve - economics */}
-        {sectionEleven && (
-          <SectionTwelve
-            data={sectionEleven?.news}
-            dataTwo={sectionTwelve?.news}
-            title={
-              data?.sectionInfo?.find((s) => s.idNumber === "10")?.category
-                ?.name || "Unknown Section"
-            }
-            titleTwo={
-              data?.sectionInfo?.find((s) => s.idNumber === "11")?.category
-                ?.name || "Unknown Section"
-            }
-          />
-        )}
+         */}
         {/* section Thirteen - jobs */}
-        {sectionThiteen && (
+        {/* {sectionThiteen && (
           <SectionThirteen
             data={sectionThiteen?.news}
             dataTwo={sectionFourteen?.news}
@@ -384,9 +489,9 @@ section eight = lifestyle, section fourteen = lifestyle/13
                 ?.name || "Unknown Section"
             }
           />
-        )}
+        )} */}
         {/* section Fourteen - lifestyle */}
-        {sectionFifteen && (
+        {/* {sectionFifteen && (
           <SectionFourteen
             data={sectionFifteen?.news}
             dataTwo={sectionSixteen?.news}
@@ -399,7 +504,7 @@ section eight = lifestyle, section fourteen = lifestyle/13
                 ?.name || "Unknown Section"
             }
           />
-        )}
+        )} */}
       </div>
       
       {/* Photo Gallery Section */}

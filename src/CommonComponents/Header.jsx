@@ -151,11 +151,11 @@ function Header() {
   return (
     <>
             <div className="container-fluid">
-        <div className="d-flex flex-row justify-content-between mb-2">
+        <div className="d-flex flex-row justify-content-between">
           
           {/* Logo */}
           <div className="d-flex align-items-center">
-            <div className="my-2 d-flex justify-content-center align-items-center">
+            <div className="d-flex justify-content-center align-items-center">
               {/* logo */}
               <Link className="" href="/">
                 <Image
@@ -165,7 +165,7 @@ function Header() {
                   height={100}
                   alt="Logo"
                   className="pointer"
-                  style={{ width: '100px', height: '100px' }}
+                  style={{ width: '170px', height: '170px' }}
                 />
               </Link>
             </div>
